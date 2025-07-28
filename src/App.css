@@ -1,38 +1,188 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: #FFF8F9; /* Very pale pink background */
+  color: #444;
+  margin: 0;
+  padding: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 800px;
+  user-select: none; /* Prevents text selection */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* --- Start and Submission Screens --- */
+.start-screen, .submission-screen {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+  border-top: 5px solid #E75480; /* Lotus Pink accent */
+}
+
+.start-screen h1, .submission-screen h2 {
+  color: #E75480; /* Lotus Pink */
+  margin-top: 0;
+}
+
+.start-screen p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.security-notice {
+    color: #c44;
+    font-size: 0.9rem !important;
+}
+
+.submission-screen .answers-review {
+  text-align: left;
+  margin-top: 20px;
+  background: #fdfafb;
+  padding: 20px;
+  border-radius: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+}
+.submission-screen .answers-review p {
+  background: #f9f2f5;
+  padding: 8px;
+  border-radius: 4px;
+  margin-top: 4px;
+  color: #555;
+}
+
+/* --- Test Form Container --- */
+.form-container {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.test-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #fdeef3;
+  padding-bottom: 15px;
+}
+
+.test-header h2 {
+  margin: 0;
+  color: #333;
+}
+
+.timer {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #E75480; /* Lotus Pink */
+  padding: 8px 16px;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(231, 84, 128, 0.3);
+}
+
+.paste-warning {
+    padding: 10px 15px;
+    background-color: #ffdddd;
+    color: #d8000c;
+    border: 1px solid #ffacac;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    animation: fadeIn 0.3s;
+}
+
+/* --- Form Elements --- */
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: #fdfdfd;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #E75480; /* Lotus Pink */
+  box-shadow: 0 0 0 3px rgba(231, 84, 128, 0.1);
+  outline: none;
+}
+
+.radio-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.radio-group input {
+  margin-right: 10px;
+  accent-color: #E75480; /* Lotus Pink */
+}
+
+.submit-btn {
+  background-color: #E75480; /* Lotus Pink */
   color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.1s;
 }
 
-.App-link {
-  color: #61dafb;
+.submit-btn:hover {
+  background-color: #D73767; /* Darker Pink */
 }
 
-@keyframes App-logo-spin {
+.submit-btn:active {
+  transform: scale(0.99);
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(-10px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
