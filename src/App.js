@@ -12,9 +12,9 @@ const questions = [
   { id: 'hobbies', label: '7. Hobbies:', type: 'text', required: true },
   { id: 'skills', label: '8. Skills (Best 3):', type: 'text', required: true },
   { id: 'laptop', label: '9. Do you have a personal laptop?', type: 'radio', options: ['Yes', 'No'], required: true },
-  { id: 'wfh', label: '10. What is your preferred work shift while working from home?', type: 'radio', options: ['Tuesday to Saturday - 4:00 PM to 8:00 PM IST', 'Tuesday to Saturday - 5:00 PM to 9:00 PM IST'], required: true },
+  { id: 'wfh', label: '10. Are you comfortable working from home for 5 days a week (flexible timings)?', type: 'radio', options: ['Yes', 'No'], required: true },
   { id: 'unpaid', label: '11. Why do you want to join this internship when it is unpaid?', type: 'textarea', required: true },
-  { id: 'expectations', label: '12. What makes you passionate about the role of a Passion Counselling Intern?', type: 'textarea', required: true },
+  { id: 'expectations', label: '12. What makes you passionate about the role of a Web Development Intern?', type: 'textarea', required: true },
   { id: 'achievement', label: '13. What has been the biggest achievement of your life?', type: 'textarea', required: true },
   { id: 'strengths', label: '14. What are your strengths? (please mention at least 4)', type: 'textarea', required: true },
   { id: 'weaknesses', label: '15. What are your weaknesses? (please mention at least 4)', type: 'textarea', required: true },
@@ -158,7 +158,7 @@ function App() {
           <h1>Welcome to the ikipendence Behavioural Assessment</h1>
           <p>The test consists of {questions.length} questions and you will have <strong>30 minutes</strong> to complete it.</p>
           <p>The test will be automatically submitted when the time runs out.</p>
-          <p className="security-notice"><strong>Note:</strong> For a fair assessment, right-clicking, copying, and pasting are disabled.</p>
+          {/* <p className="security-notice"><strong>Note:</strong> For a fair assessment, right-clicking, copying, and pasting are disabled.</p> */}
           <button onClick={handleStartTest} className="submit-btn">Start Test</button>
         </div>
       </div>
